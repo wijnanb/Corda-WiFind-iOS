@@ -34,12 +34,12 @@
 }
 
 - (void)handleSSID:(NSNotification *)note{
-    NSLog(@"%@",[connectivityObj sharedManager].connectedSSID);
+    NSLog(@"handleSSID: %@",[connectivityObj sharedManager].connectedSSID);
     [self showValuesToUser];
 }
 
 - (void)handleBeacon:(NSNotification *)note{
-    NSLog(@"%@",[[connectivityObj sharedManager].connectedBeacon.proximityUUID UUIDString]);
+    NSLog(@"handleBeacon: %@",[[connectivityObj sharedManager].connectedBeacon.proximityUUID UUIDString]);
     [self showValuesToUser];
 }
 
