@@ -10,7 +10,7 @@
 #import "connectivityObj.h"
 
 @interface BeaconViewController ()
-
+@property NSURL *url;
 @end
 
 @implementation BeaconViewController
@@ -60,20 +60,27 @@
     NSError *err;
     NSData *data = [NSJSONSerialization dataWithJSONObject:json options:NSJSONWritingPrettyPrinted error:&err];
     NSString *server = [[NSUserDefaults standardUserDefaults] stringForKey:@"preferedServer"];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/userlocation/",server]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url];
+    _url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/api/userlocation/",server]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:_url];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:data];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
         
-        NSLog(@"Data has been send to server: %@!",url.path);
+        NSLog(@"Data has been send to server: %@!",[_url absoluteString]);
     }];
 
 }
 //change UI
 -(void) showValuesToUser{
+    NSString *beaconData =[NSString stringWithFormat:@"%@-%@",[connectivityObj sharedManager].connectedBeacon.major,[connectivityObj sharedManager].connectedBeacon.minor];
+    if([beaconData hasPrefix:@"(null)"] ||  [beaconData hasPrefix:@"(null)"])
+        beaconData=@"";
+    
+    self.lbBeacon.text = [NSString stringWithFormat:@"Beacon: %@",beaconData];
+    self.lbSSID.text = [NSString stringWithFormat:@"SSID:%@",[connectivityObj sharedManager].connectedSSID ];
     [self sendUserLocation];
+    
 }
 
 

@@ -16,15 +16,25 @@
 @property (nonatomic, strong) CLLocationManager     *locationManager;
 @property (nonatomic, strong) CLBeaconRegion        *beaconRegion;
 @property (nonatomic, strong) NSString              *latestSSID;
+@property (nonatomic, strong) NSMutableSet          *SSIDHistory;
 @property (nonatomic, strong) CLBeacon              *latestBeacon;
-
+@property (nonatomic, strong) NSMutableDictionary   *beaconHistory; //key: major, value: (nsarray)minors
+@property (nonatomic, strong) NSArray               *beaconsAvailable;
 @end
 
 static connectivityObj *_sharedInstance = nil;
 
 
 @implementation connectivityObj
-
+- (NSArray *) historySSID{
+    return _SSIDHistory.allObjects;
+}
+- (NSArray *) availableBeacons{
+    return _beaconsAvailable;
+}
+- (NSDictionary *) historyBeacons{
+    return _beaconHistory;
+}
 - (NSString *) connectedSSID{
     return self.latestSSID;
 }
@@ -38,6 +48,7 @@ static connectivityObj *_sharedInstance = nil;
         if(myDict){
             NSDictionary* ssid_info = (__bridge NSDictionary*) myDict;
             NSString *newSSID = [ssid_info objectForKey:@"SSID"];
+            [_SSIDHistory addObject:newSSID];
             if(![newSSID isEqualToString:self.latestSSID]){
                 [self sendStatus:@"" withType:SSID_notify];
                 self.latestSSID = newSSID;
@@ -59,6 +70,8 @@ static connectivityObj *_sharedInstance = nil;
     dispatch_once(&onceToken, ^{
         _sharedInstance = [[connectivityObj alloc] init];
         _sharedInstance.latestSSID = @"";
+        _sharedInstance.beaconHistory = [[NSMutableDictionary alloc]init];
+        _sharedInstance.SSIDHistory = [[NSMutableSet alloc]init];
     });
     return _sharedInstance;
 }
@@ -99,6 +112,17 @@ static connectivityObj *_sharedInstance = nil;
 -(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
     CLBeacon *chosenOne = [[CLBeacon alloc] init];
     chosenOne = [beacons lastObject];
+    
+    NSMutableArray *minors = [_beaconHistory objectForKey:chosenOne.major];
+    if(minors){
+        if(![minors containsObject:chosenOne.minor])
+            [minors addObject:chosenOne.minor];
+    }else{
+        minors = [[NSMutableArray alloc]initWithObjects:chosenOne.minor, nil];
+    }
+    
+    _beaconsAvailable = beacons;
+    
     if(!_latestBeacon){
         if(chosenOne.major!=_latestBeacon.major)
             if(chosenOne.minor !=_latestBeacon.minor){
