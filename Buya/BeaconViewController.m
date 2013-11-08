@@ -59,14 +59,15 @@
     
     NSError *err;
     NSData *data = [NSJSONSerialization dataWithJSONObject:json options:NSJSONWritingPrettyPrinted error:&err];
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:@"http://192.168.0.220:5000/api/userlocation/"]];
+    NSString *server = [[NSUserDefaults standardUserDefaults] stringForKey:@"preferedServer"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/userlocation/",server]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:data];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
         
-        NSLog(@"Data has been send to server!");
+        NSLog(@"Data has been send to server: %@!",url.path);
     }];
 
 }

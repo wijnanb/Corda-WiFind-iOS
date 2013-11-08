@@ -10,6 +10,7 @@
 		62503F72182C46FF00269B17 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62503F71182C46FF00269B17 /* FacebookSDK.framework */; };
 		62503F75182C48B200269B17 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62503F74182C48B200269B17 /* loginViewController.m */; };
 		62503F78182C4EE300269B17 /* BeaconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62503F77182C4EE300269B17 /* BeaconViewController.m */; };
+		62503F7A182C66F200269B17 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 62503F79182C66F200269B17 /* Settings.bundle */; };
 		62B21568182C096E008A699E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B21567182C096E008A699E /* Foundation.framework */; };
 		62B2156A182C096E008A699E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B21569182C096E008A699E /* CoreGraphics.framework */; };
 		62B2156C182C096E008A699E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2156B182C096E008A699E /* UIKit.framework */; };
@@ -44,6 +45,7 @@
 		62503F74182C48B200269B17 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		62503F76182C4EE300269B17 /* BeaconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconViewController.h; sourceTree = "<group>"; };
 		62503F77182C4EE300269B17 /* BeaconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconViewController.m; sourceTree = "<group>"; };
+		62503F79182C66F200269B17 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		62B21564182C096E008A699E /* CordaWiFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CordaWiFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B21567182C096E008A699E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		62B21569182C096E008A699E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,6 +99,7 @@
 		62B2155B182C096E008A699E = {
 			isa = PBXGroup;
 			children = (
+				62503F79182C66F200269B17 /* Settings.bundle */,
 				62B2156D182C096E008A699E /* Buya */,
 				62B2158F182C096E008A699E /* BuyaTests */,
 				62B21566182C096E008A699E /* Frameworks */,
@@ -250,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62503F7A182C66F200269B17 /* Settings.bundle in Resources */,
 				62B21583182C096E008A699E /* Images.xcassets in Resources */,
 				62B2157B182C096E008A699E /* Main_iPhone.storyboard in Resources */,
 				62B21572182C096E008A699E /* InfoPlist.strings in Resources */,
