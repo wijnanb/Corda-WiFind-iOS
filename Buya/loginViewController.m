@@ -33,6 +33,7 @@
     [super viewDidLoad];
     _login.readPermissions = @[@"basic_info",@"user_location"];
     _login.delegate = self;
+    _profilePic.layer.cornerRadius = 50;
     
 }
 
@@ -45,18 +46,18 @@
     //[self performSegueWithIdentifier:@"userLoggedIn" sender:self];
     
     [self.btContinue setHidden:NO];
-    [_login setHidden:YES];
+   // [_login setHidden:YES];
 }
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView{
     [self.btContinue setHidden:YES];
-    [_login setHidden:NO];
+    _profilePic.profileID = nil;
+    self.lbUsername.text = [NSString stringWithFormat:@"Hello stranger, tell me who you are!"];
+    //[_login setHidden:NO];
 }
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{
-    _profilePic.profileID = user.id;
-    _profilePic.layer.cornerRadius = 50;
-    NSLog(@"%@",user.username);
+    _profilePic.profileID = user.id;    NSLog(@"%@",user.username);
     _user = user;
-    self.lbUsername.text = [NSString stringWithFormat:@"Hello, %@",user.name];
+    self.lbUsername.text = [NSString stringWithFormat:@"Hi %@, nice to meet you!",user.name];
     [_profilePic layoutSubviews];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
