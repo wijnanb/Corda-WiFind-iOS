@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cth-yT-4EC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cth-yT-4EC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -28,31 +28,39 @@
                         <viewControllerLayoutGuide type="bottom" id="Mms-T2-dOD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Dko-Ie-1ht">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R9g-pg-tdw" customClass="FBProfilePictureView">
-                                <rect key="frame" x="46" y="86" width="220" height="220"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9g-pg-tdw" customClass="FBProfilePictureView">
+                                <rect key="frame" x="60" y="91" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.54624362208082489" green="0.61599767979837505" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="5XD-FW-uwc"/>
+                                    <constraint firstAttribute="height" constant="200" id="CZO-5C-pzC"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5O-Kb-GCf" customClass="FBLoginView">
-                                <rect key="frame" x="35" y="339" width="250" height="58"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5O-Kb-GCf" customClass="FBLoginView">
+                                <rect key="frame" x="60" y="299" width="200" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.54624362209999999" green="0.61599767979999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="49i-7y-N46"/>
+                                    <constraint firstAttribute="height" constant="50" id="Jev-ma-aaQ"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hello, user!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtG-RZ-BoI">
-                                <rect key="frame" x="35" y="412" width="250" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, user!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtG-RZ-BoI">
+                                <rect key="frame" x="35" y="354" width="250" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="iWo-Jk-mwT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9G-Wm-SyO">
-                                <rect key="frame" x="13" y="448" width="287" height="76"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9G-Wm-SyO">
+                                <rect key="frame" x="17" y="410" width="287" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="106" id="DdP-71-Daa"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Turn on WiFinder!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,11 +72,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="e9G-Wm-SyO" secondAttribute="trailing" constant="20" symbolic="YES" id="Cus-h5-B1C"/>
-                            <constraint firstItem="TtG-RZ-BoI" firstAttribute="top" secondItem="O5O-Kb-GCf" secondAttribute="bottom" constant="60" id="KhW-Xb-05F"/>
+                            <constraint firstItem="O5O-Kb-GCf" firstAttribute="top" secondItem="R9g-pg-tdw" secondAttribute="bottom" constant="8" id="2qV-hp-meZ"/>
+                            <constraint firstItem="TtG-RZ-BoI" firstAttribute="top" secondItem="O5O-Kb-GCf" secondAttribute="bottom" constant="5" id="4i7-Pm-TdQ"/>
+                            <constraint firstAttribute="trailing" secondItem="e9G-Wm-SyO" secondAttribute="trailing" constant="16" id="Cus-h5-B1C"/>
+                            <constraint firstItem="e9G-Wm-SyO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Dko-Ie-1ht" secondAttribute="leading" constant="17" id="D5d-xb-gah"/>
+                            <constraint firstItem="TtG-RZ-BoI" firstAttribute="leading" secondItem="Dko-Ie-1ht" secondAttribute="leading" constant="35" id="GyN-0G-fgn"/>
+                            <constraint firstItem="R9g-pg-tdw" firstAttribute="top" secondItem="H46-py-wOl" secondAttribute="bottom" constant="27" id="Hoh-og-fcj"/>
+                            <constraint firstItem="R9g-pg-tdw" firstAttribute="leading" secondItem="O5O-Kb-GCf" secondAttribute="leading" id="TPT-v9-gVk"/>
+                            <constraint firstItem="Mms-T2-dOD" firstAttribute="top" secondItem="e9G-Wm-SyO" secondAttribute="bottom" constant="20" id="TPW-SV-7BA"/>
                             <constraint firstAttribute="bottom" secondItem="e9G-Wm-SyO" secondAttribute="bottom" constant="20" symbolic="YES" id="TZa-Jc-mnW"/>
-                            <constraint firstItem="e9G-Wm-SyO" firstAttribute="top" secondItem="TtG-RZ-BoI" secondAttribute="bottom" constant="8" symbolic="YES" id="crM-pY-R2R"/>
-                            <constraint firstItem="e9G-Wm-SyO" firstAttribute="leading" secondItem="Dko-Ie-1ht" secondAttribute="leading" constant="13" id="s2T-XQ-fbE"/>
+                            <constraint firstItem="R9g-pg-tdw" firstAttribute="centerX" secondItem="e9G-Wm-SyO" secondAttribute="centerX" id="UfZ-L5-DW2"/>
+                            <constraint firstItem="e9G-Wm-SyO" firstAttribute="top" secondItem="TtG-RZ-BoI" secondAttribute="bottom" constant="17" id="YYc-Mp-vOA"/>
+                            <constraint firstItem="R9g-pg-tdw" firstAttribute="centerX" secondItem="TtG-RZ-BoI" secondAttribute="centerX" id="gaO-ek-NQB"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e9G-Wm-SyO" secondAttribute="trailing" constant="16" id="ns6-2B-CXi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ke8-F8-nJi"/>
@@ -92,7 +108,7 @@
                         <viewControllerLayoutGuide type="bottom" id="clm-LP-zqr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XlG-BC-jNQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SSID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gf1-SO-c8c">
@@ -149,6 +165,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
