@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#define buyaRegionIdentifier @"BuyaaaaCordaFinder"
+
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
++ (NSUUID*)buyaUUID;
 
 @end
