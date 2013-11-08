@@ -52,19 +52,22 @@
     NSString *beaconData =[NSString stringWithFormat:@"%@-%@",[connectivityObj sharedManager].connectedBeacon.major,[connectivityObj sharedManager].connectedBeacon.minor];
     if([beaconData hasPrefix:@"(null)"] ||  [beaconData hasPrefix:@"(null)"])
         beaconData=@"";
-    NSDictionary *json = [[NSDictionary alloc]initWithObjectsAndKeys:ssid,@"SSID",
+    NSDictionary *json = [[NSDictionary alloc]initWithObjectsAndKeys:ssid,@"ssid",
                           beaconData,@"beacon",
                           [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture",_user.username],@"picture",
                           _user.username,@"username", nil];
     
     NSError *err;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:json options:NSJSONWritingPrettyPrinted error:&err];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:json options:0 error:&err];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [data length]];
     
     [[NSUserDefaults standardUserDefaults] synchronize ];
     NSString *server = [[NSUserDefaults standardUserDefaults] stringForKey:@"preferedServer"];
     _url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/userlocation/",server]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:_url];
     [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:data];
     
     NSLog(@"POST to server: %@",_url);
