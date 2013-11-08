@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62503F72182C46FF00269B17 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62503F71182C46FF00269B17 /* FacebookSDK.framework */; };
+		4C3882EE182C6FA00054374E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3882ED182C6FA00054374E /* FacebookSDK.framework */; };
 		62503F75182C48B200269B17 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62503F74182C48B200269B17 /* loginViewController.m */; };
 		62503F78182C4EE300269B17 /* BeaconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62503F77182C4EE300269B17 /* BeaconViewController.m */; };
 		62503F7A182C66F200269B17 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 62503F79182C66F200269B17 /* Settings.bundle */; };
@@ -40,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		62503F71182C46FF00269B17 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		4C3882ED182C6FA00054374E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		62503F73182C48B200269B17 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		62503F74182C48B200269B17 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		62503F76182C4EE300269B17 /* BeaconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconViewController.h; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 				62B2156A182C096E008A699E /* CoreGraphics.framework in Frameworks */,
 				62B2156C182C096E008A699E /* UIKit.framework in Frameworks */,
 				62B21568182C096E008A699E /* Foundation.framework in Frameworks */,
-				62503F72182C46FF00269B17 /* FacebookSDK.framework in Frameworks */,
+				4C3882EE182C6FA00054374E /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +119,7 @@
 		62B21566182C096E008A699E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				62503F71182C46FF00269B17 /* FacebookSDK.framework */,
+				4C3882ED182C6FA00054374E /* FacebookSDK.framework */,
 				62B215A4182C185B008A699E /* CoreLocation.framework */,
 				62B215A2182C1226008A699E /* SystemConfiguration.framework */,
 				62B21567182C096E008A699E /* Foundation.framework */,
@@ -411,6 +411,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/roberto/Documents/iOS/Buya,
+					"/Users/bert/Projects/Corda-WiFind-iOS",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Buya/Buya-Prefix.pch";
@@ -430,6 +431,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/roberto/Documents/iOS/Buya,
+					"/Users/bert/Projects/Corda-WiFind-iOS",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Buya/Buya-Prefix.pch";
