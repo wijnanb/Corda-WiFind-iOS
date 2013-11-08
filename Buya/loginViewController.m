@@ -45,11 +45,11 @@
     //[self performSegueWithIdentifier:@"userLoggedIn" sender:self];
     
     [self.btContinue setHidden:NO];
-    [_login setHidden:YES];
+    //[_login setHidden:YES];
 }
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView{
     [self.btContinue setHidden:YES];
-    [_login setHidden:NO];
+    //[_login setHidden:NO];
 }
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{
     _profilePic.profileID = user.id;
