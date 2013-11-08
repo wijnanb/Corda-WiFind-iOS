@@ -17,7 +17,10 @@
 +(instancetype) sharedManager;
 
 - (NSString *) connectedSSID;
+- (NSArray *) historySSID;
 - (CLBeacon *) connectedBeacon;
+- (NSDictionary *) historyBeacons;
+- (NSArray *) availableBeacons;
 - (void)start;
 
 @end

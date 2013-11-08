@@ -10,5 +10,7 @@
 @interface BeaconViewController : UIViewController
 
 @property (nonatomic,strong) id<FBGraphUser> user;
+@property (strong, nonatomic) IBOutlet UILabel *lbSSID;
+@property (strong, nonatomic) IBOutlet UILabel *lbBeacon;
 
 @end
