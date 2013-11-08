@@ -62,7 +62,7 @@
     
     [[NSUserDefaults standardUserDefaults] synchronize ];
     NSString *server = [[NSUserDefaults standardUserDefaults] stringForKey:@"preferedServer"];
-    _url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/api/userlocation/",server]];
+    _url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/userlocation/",server]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:_url];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:data];
